@@ -43,11 +43,17 @@ Aplicativo destinado ao gerenciamento de tarefas construído com React e Node.js
     JWT_SECRET=sua_chave_secreta
     PORT=4000
     ```
-5. Inicie o servidor:
+5. Configure o banco de dados PostgreSQL executando o script `setupDatabase.js`:
+    ```bash
+    node setupDatabase.js
+    ```
+    Este script criará a tabela necessária no banco de dados.
+
+6. Inicie o servidor:
     ```bash
     npm start
     ```
-6. Acesse a documentação da API (Swagger) em [http://localhost:4000/api-docs](http://localhost:4000/api-docs).
+7. Acesse a documentação da API (Swagger) em [http://localhost:4000/api-docs](http://localhost:4000/api-docs).
 
 ### Frontend (App)
 
