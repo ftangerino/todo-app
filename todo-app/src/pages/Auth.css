@@ -1,0 +1,118 @@
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4;
+}
+
+.auth-card {
+  background: white;
+  padding: 2rem; /* Ajustado para refletir o padding do modal */
+  border-radius: 0.5rem; /* Ajustado para refletir o border-radius do modal */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Ajustado para refletir o box-shadow do modal */
+  text-align: left;
+  width: 350px; /* Aumentado para maior consistência com o modal */
+  max-width: 90%; /* Para garantir que não exceda a largura da viewport em telas menores */
+}
+
+.auth-card h1 {
+  margin-bottom: 20px;
+  font-size: 1.65rem; /* Ajustado para refletir o tamanho da fonte do modal */
+  line-height: 1.75rem; /* Ajustado para refletir o line-height do modal */
+  font-weight: 600; /* Ajustado para refletir o font-weight do modal */
+  color: #000; /* Ajustado para refletir a cor do modal */
+}
+
+.auth-card form {
+  display: flex;
+  flex-direction: column;
+}
+
+.auth-card label {
+  margin-top: 10px;
+  font-size: 0.875rem; /* Ajustado para refletir o tamanho da fonte do modal */
+  color: #6b7280; /* Ajustado para refletir a cor do modal */
+}
+
+.auth-card input,
+.auth-card button {
+  margin-top: 5px;
+  padding: 1rem; /* Ajustado para refletir o padding do modal */
+  font-size: 0.875rem; /* Ajustado para refletir o tamanho da fonte do modal */
+  line-height: 1.25rem; /* Ajustado para refletir o line-height do modal */
+  border-radius: 0.5rem; /* Ajustado para refletir o border-radius do modal */
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); /* Ajustado para refletir o box-shadow do modal */
+}
+
+.auth-card input {
+  outline: none;
+  border: 1px solid #e5e7eb;
+  background-color: #fff;
+  width: 100%;
+  box-sizing: border-box; /* Garantir que o padding esteja incluído no tamanho total */
+}
+
+.auth-card button {
+  background-color: #4F46E5; /* Ajustado para refletir a cor de fundo do botão de submit do modal */
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 100%; /* Garantir que o botão ocupe toda a largura disponível */
+  text-transform: uppercase; /* Ajustado para refletir o text-transform do botão de submit do modal */
+  font-weight: 500; /* Ajustado para refletir o font-weight do botão de submit do modal */
+  margin-top: 1rem; /* Ajustado para refletir o margin-top do botão de submit do modal */
+}
+
+.auth-card button:hover {
+  background-color: #3b38a6; /* Ajustado para refletir a cor de fundo do botão de submit ao passar o mouse do modal */
+}
+
+.auth-card p {
+  margin-top: 20px;
+  font-size: 0.875rem; /* Ajustado para refletir o tamanho da fonte do modal */
+  line-height: 1.25rem; /* Ajustado para refletir o line-height do modal */
+  color: #6b7280; /* Ajustado para refletir a cor do modal */
+}
+
+.auth-card a {
+  color: #4F46E5; /* Ajustado para refletir a cor de fundo do botão de submit do modal */
+  text-decoration: none;
+}
+
+.auth-card a:hover {
+  text-decoration: underline;
+}
+
+.back-button {
+  margin-top: 20px;
+  background-color: #6c757d;
+  padding: 0.75rem 1.25rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  border-radius: 0.5rem;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 100%;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.back-button:hover {
+  background-color: #5a6268;
+}
+
+/* Mensagem de erro */
+.error-message {
+  color: red;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  margin-bottom: 10px;
+  background-color: #ffe5e5;
+  padding: 10px;
+  border: 1px solid #ffcccc;
+  border-radius: 0.5rem;
+}
