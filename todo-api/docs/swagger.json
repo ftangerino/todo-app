@@ -1,0 +1,267 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "To-Do API",
+    "version": "1.0.0",
+    "description": "API para gerenciar uma lista de tarefas"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:4000"
+    }
+  ],
+  "paths": {
+    "/auth/register": {
+      "post": {
+        "summary": "Registra um novo usuário",
+        "tags": [
+          "Auth"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/User"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Usuário registrado com sucesso"
+          },
+          "500": {
+            "description": "Erro ao registrar usuário"
+          }
+        }
+      }
+    },
+    "/auth/login": {
+      "post": {
+        "summary": "Faz login de um usuário",
+        "tags": [
+          "Auth"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/User"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Login bem-sucedido"
+          },
+          "401": {
+            "description": "Senha incorreta"
+          },
+          "404": {
+            "description": "Usuário não encontrado"
+          },
+          "500": {
+            "description": "Erro ao fazer login"
+          }
+        }
+      }
+    },
+    "/api/tasks": {
+      "post": {
+        "summary": "Cria uma nova tarefa",
+        "tags": [
+          "Tasks"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Task"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Tarefa criada com sucesso",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Task"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erro ao criar tarefa"
+          }
+        }
+      },
+      "get": {
+        "summary": "Retorna a lista de todas as tarefas",
+        "tags": [
+          "Tasks"
+        ],
+        "responses": {
+          "200": {
+            "description": "Lista de tarefas",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Task"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erro ao buscar tarefas"
+          }
+        }
+      }
+    },
+    "/api/tasks/{id}": {
+      "put": {
+        "summary": "Atualiza uma tarefa existente",
+        "tags": [
+          "Tasks"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "description": "ID da tarefa"
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Task"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Tarefa atualizada com sucesso",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Task"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Tarefa não encontrada"
+          },
+          "500": {
+            "description": "Erro ao atualizar tarefa"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Deleta uma tarefa existente",
+        "tags": [
+          "Tasks"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "description": "ID da tarefa"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Tarefa deletada com sucesso"
+          },
+          "404": {
+            "description": "Tarefa não encontrada"
+          },
+          "500": {
+            "description": "Erro ao deletar tarefa"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "User": {
+        "type": "object",
+        "required": [
+          "username",
+          "password"
+        ],
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "ID do usuário"
+          },
+          "username": {
+            "type": "string",
+            "description": "Nome de usuário"
+          },
+          "password": {
+            "type": "string",
+            "description": "Senha do usuário"
+          }
+        }
+      },
+      "Task": {
+        "type": "object",
+        "required": [
+          "title",
+          "description",
+          "status"
+        ],
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "ID da tarefa"
+          },
+          "title": {
+            "type": "string",
+            "description": "Título da tarefa"
+          },
+          "description": {
+            "type": "string",
+            "description": "Descrição da tarefa"
+          },
+          "status": {
+            "type": "string",
+            "description": "Status da tarefa",
+            "enum": [
+              "pendente",
+              "em progresso",
+              "concluída"
+            ]
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Data de criação da tarefa"
+          }
+        }
+      }
+    }
+  },
+  "tags": []
+}
