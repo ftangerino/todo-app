@@ -1,103 +1,113 @@
+/* Container principal da página inicial */
 .home-container {
-    padding: 20px;
-    background-color: #f4f4f4;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .home-container h1 {
-    margin-bottom: 20px;
-    font-size: 2rem;
-    color: #4F46E5;
-  }
-  
-  .home-container button, .home-container a {
-    /* background-color: #4F46E5; */
-    color: #4F46E5;
-    border: none;
-    cursor: pointer;
-    text-transform: uppercase;
-    font-weight: 600;
-    margin-bottom: 20px;
-    padding: 7px 15px;
-    border-radius: 10px;
-    transition: background-color 0.3s;
-    text-decoration: none;
-    display: inline-block;
-  }
-  
-  .home-container button:hover {
-    background-color: #4F46E5;
-  }
-  
-  .columns {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    max-width: 1400px;
-    gap: 20px;
-  }
-  
-  .column {
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 8px;
-    width: 30%;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .column h2 {
-    margin-bottom: 10px;
-    font-size: 1.5rem;
-    color: #4F46E5;
-  }
-  
-  .task-card {
-    position: relative;
-    background: white;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin-bottom: 15px;
-    width: 100%;
-    transition: background-color 0.3s;
-  }
-  
-  .task-card:hover {
-    background-color: #f0f0f0;
-  }
-  
-  .task-card h3 {
-    margin: 0 0 10px 0;
-    font-size: 1.25rem;
-    color: #333;
-  }
-  
-  .task-card p {
-    margin: 5px 0;
-    font-size: 0.875rem;
-    color: #666;
-  }
-  
-  /* Botão de apagar */
-  .delete-button {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: none;
-    border: none;
-    color: gray;
-    font-size: 20px;
-    cursor: pointer;
-    transition: color 0.3s;
-  }
-  
-  .delete-button:hover {
-    color: rgb(255, 255, 255);
-  }
-  
+  padding: 20px;
+  background-color: #f4f4f4;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Estilos para o título principal da página */
+.home-container h1 {
+  margin-bottom: 20px;
+  font-size: 2rem;
+  color: #4F46E5;
+}
+
+/* Estilos para botões e links na página */
+.home-container button, .home-container a {
+  color: #4F46E5;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 20px;
+  padding: 7px 15px;
+  border-radius: 10px;
+  transition: background-color 0.3s;
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* Estilos para botão ao passar o mouse */
+.home-container button:hover {
+  background-color: #4F46E5;
+}
+
+/* Container das colunas de tarefas */
+.columns {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  max-width: 1400px;
+  gap: 20px;
+}
+
+/* Estilos para cada coluna */
+.column {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 30%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Estilos para o título de cada coluna */
+.column h2 {
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  color: #4F46E5;
+}
+
+/* Estilos para cada cartão de tarefa */
+.task-card {
+  position: relative;
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 15px;
+  width: 100%;
+  transition: background-color 0.3s;
+}
+
+/* Estilos para o cartão de tarefa ao passar o mouse */
+.task-card:hover {
+  background-color: #f0f0f0;
+}
+
+/* Estilos para o título da tarefa */
+.task-card h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.25rem;
+  color: #333;
+}
+
+/* Estilos para a descrição e status da tarefa */
+.task-card p {
+  margin: 5px 0;
+  font-size: 0.875rem;
+  color: #666;
+}
+
+/* Estilos para o botão de apagar tarefa */
+.delete-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  color: gray;
+  font-size: 20px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+/* Estilos para o botão de apagar ao passar o mouse */
+.delete-button:hover {
+  color: rgb(255, 255, 255);
+}

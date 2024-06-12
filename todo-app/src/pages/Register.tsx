@@ -5,6 +5,12 @@ import axios from 'axios';
 import * as Yup from 'yup';
 import './Auth.css';
 
+/**
+ * Componente de registro.
+ * Utiliza Formik para manipulação de formulários e Yup para validação.
+ * 
+ * @returns {React.FC} - Componente funcional do React.
+ */
 const Register: React.FC = () => {
   const navigate = useNavigate();
   const [errorMessage, setErrorMessage] = useState('');
@@ -17,11 +23,11 @@ const Register: React.FC = () => {
         <Formik
           initialValues={{ username: '', password: '', confirmPassword: '' }}
           validationSchema={Yup.object({
-            username: Yup.string().required('Required'),
-            password: Yup.string().required('Required'),
+            username: Yup.string().required('* Campo obrigatório'),
+            password: Yup.string().required('* Campo obrigatório'),
             confirmPassword: Yup.string()
-              .oneOf([Yup.ref('password'), undefined], 'Passwords must match')
-              .required('Required'),
+              .oneOf([Yup.ref('password'), undefined], 'As senhas devem ser iguais')
+              .required('* Campo obrigatório'),
           })}
           onSubmit={async (values, { setSubmitting, setErrors }) => {
             try {
@@ -32,9 +38,9 @@ const Register: React.FC = () => {
               navigate('/login');
             } catch (error: any) {
               if (error.response && error.response.status === 409) {
-                setErrors({ username: 'Username already exists.' });
+                setErrors({ username: 'Usuário já existente.' });
               } else {
-                setErrorMessage('Registration failed. Please try again.');
+                setErrorMessage('Falha ao criar, verifique seus dados e tente novamente.');
               }
               setTimeout(() => {
                 setErrorMessage('');
@@ -45,15 +51,15 @@ const Register: React.FC = () => {
         >
           {({ errors, touched }) => (
             <Form>
-              <label htmlFor="username">Username</label>
+              <label htmlFor="username">Nome de Usuário</label>
               <Field name="username" type="text" />
               <ErrorMessage name="username" component="div" className="error-message" />
               
-              <label htmlFor="password">Password</label>
+              <label htmlFor="password">Senha</label>
               <Field name="password" type="password" />
               <ErrorMessage name="password" component="div" className="error-message" />
               
-              <label htmlFor="confirmPassword">Confirm Password</label>
+              <label htmlFor="confirmPassword">Confirmar Senha</label>
               <Field name="confirmPassword" type="password" />
               <ErrorMessage name="confirmPassword" component="div" className="error-message" />
               

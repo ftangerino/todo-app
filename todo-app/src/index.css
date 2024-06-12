@@ -1,5 +1,4 @@
-/* Adicione estilos aqui se necessário */
-
+/* Estilos globais para o aplicativo */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -7,36 +6,43 @@ body {
   background-color: #f4f4f4;
 }
 
+/* Container principal */
 .container {
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
 }
 
+/* Estilos para o título principal */
 h1 {
   text-align: center;
 }
 
+/* Estilos para os formulários */
 form {
   display: flex;
   flex-direction: column;
 }
 
+/* Estilos para os rótulos dos campos do formulário */
 label {
   margin-top: 10px;
 }
 
+/* Estilos para os campos de entrada, select e botão */
 input, select, button {
   margin-top: 5px;
   padding: 10px;
   font-size: 16px;
 }
 
+/* Estilos para a lista */
 ul {
   list-style: none;
   padding: 0;
 }
 
+/* Estilos para os itens da lista */
 li {
   background: white;
   margin-bottom: 10px;
@@ -45,6 +51,7 @@ li {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Estilos para os botões */
 button {
   background-color: #007bff;
   color: white;
@@ -52,15 +59,18 @@ button {
   cursor: pointer;
 }
 
+/* Estilos para os botões ao passar o mouse */
 button:hover {
   background-color: #0056b3;
 }
 
+/* Estilos para os links */
 a {
   color: #007bff;
   text-decoration: none;
 }
 
+/* Estilos para os links ao passar o mouse */
 a:hover {
   text-decoration: underline;
 }

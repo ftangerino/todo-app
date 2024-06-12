@@ -20,6 +20,11 @@ const options = {
 
 const specs = swaggerJsdoc(options);
 
+/**
+ * Configura o Swagger UI para a documentação da API.
+ * 
+ * @param {Object} app - Instância do aplicativo Express.
+ */
 module.exports = (app) => {
   app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
 };

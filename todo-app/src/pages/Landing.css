@@ -1,36 +1,40 @@
+/* Container principal da página de aterrissagem */
 .landing-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background-color: #f4f4f4;
-    background-image: url(https://images.pexels.com/photos/5717479/pexels-photo-5717479.jpeg?cs=srgb&dl=pexels-polina-kovaleva-5717479.jpg&fm=jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-  
-  h1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-  }
-  
-  .landing-buttons {
-    display: flex;
-    gap: 20px;
-  }
-  
-  .landing-button {
-    padding: 10px 20px;
-    font-size: 1.2rem;
-    color: white;
-    background-color: #654c11;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-  }
-  
-  .landing-button:hover {
-    background-color: #362900;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f4f4f4;
+  background-image: url(https://images.pexels.com/photos/5717479/pexels-photo-5717479.jpeg?cs=srgb&dl=pexels-polina-kovaleva-5717479.jpg&fm=jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Estilos para o título principal da página */
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+/* Container para os botões da página */
+.landing-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+/* Estilos para os botões */
+.landing-button {
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  color: white;
+  background-color: #654c11;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+/* Estilos para os botões ao passar o mouse */
+.landing-button:hover {
+  background-color: #362900;
+}

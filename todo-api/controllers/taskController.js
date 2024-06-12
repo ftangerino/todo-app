@@ -1,5 +1,10 @@
 const Task = require('../models/task');
 
+/**
+ * Cria uma nova tarefa.
+ * @param {Object} req - Objeto de requisição do Express.
+ * @param {Object} res - Objeto de resposta do Express.
+ */
 exports.createTask = async (req, res) => {
   try {
     const { title, description, status } = req.body;
@@ -10,6 +15,11 @@ exports.createTask = async (req, res) => {
   }
 };
 
+/**
+ * Retorna todas as tarefas.
+ * @param {Object} req - Objeto de requisição do Express.
+ * @param {Object} res - Objeto de resposta do Express.
+ */
 exports.getTasks = async (req, res) => {
   try {
     const tasks = await Task.findAll();
@@ -19,6 +29,11 @@ exports.getTasks = async (req, res) => {
   }
 };
 
+/**
+ * Atualiza uma tarefa existente.
+ * @param {Object} req - Objeto de requisição do Express.
+ * @param {Object} res - Objeto de resposta do Express.
+ */
 exports.updateTask = async (req, res) => {
   try {
     const { id } = req.params;
@@ -37,6 +52,11 @@ exports.updateTask = async (req, res) => {
   }
 };
 
+/**
+ * Deleta uma tarefa existente.
+ * @param {Object} req - Objeto de requisição do Express.
+ * @param {Object} res - Objeto de resposta do Express.
+ */
 exports.deleteTask = async (req, res) => {
   try {
     const { id } = req.params;

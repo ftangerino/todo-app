@@ -10,6 +10,9 @@ const client = new Client({
   port: process.env.DB_PORT,
 });
 
+/**
+ * Query para criar a tabela 'tasks_test2' se ela não existir.
+ */
 const createTableQuery = `
   CREATE TABLE IF NOT EXISTS tasks_test2 (
     id SERIAL PRIMARY KEY,
@@ -20,6 +23,9 @@ const createTableQuery = `
   );
 `;
 
+/**
+ * Conecta ao banco de dados, cria a tabela 'tasks_test2' e fecha a conexão.
+ */
 client.connect()
   .then(() => {
     console.log('Conectado ao banco de dados');

@@ -12,6 +12,11 @@ interface TaskModalProps {
   onUpdate: (id: number, values: { title: string; description: string; status: string }) => void;
 }
 
+/**
+ * Componente de modal para atualizar uma tarefa.
+ * 
+ * @param {TaskModalProps} props - Propriedades do componente.
+ */
 const TaskModal: React.FC<TaskModalProps> = ({ isOpen, onRequestClose, task, onUpdate }) => {
   useEffect(() => {
     Modal.setAppElement('body');

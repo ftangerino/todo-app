@@ -1,6 +1,10 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/database');
 
+/**
+ * Modelo da tabela Task no banco de dados.
+ * Define as colunas e suas propriedades.
+ */
 const Task = sequelize.define('Task', {
   id: {
     type: DataTypes.INTEGER,

@@ -5,6 +5,10 @@ import * as Yup from 'yup';
 import { useTasks } from '../context/TaskContext';
 import './CreateTask.css';
 
+/**
+ * Componente para criação de uma nova tarefa.
+ * Utiliza Formik para manipulação de formulários e Yup para validação.
+ */
 const CreateTask: React.FC = () => {
   const { addTask } = useTasks();
   const navigate = useNavigate();
@@ -12,7 +16,7 @@ const CreateTask: React.FC = () => {
   return (
     <div className="create-task-container">
       <div className="create-task-card">
-        <h1>Create Task</h1>
+        <h1>Criar Tarefa</h1>
         <Formik
           initialValues={{
             title: '',
@@ -32,11 +36,11 @@ const CreateTask: React.FC = () => {
         >
           {({ errors, touched }) => (
             <Form>
-              <label htmlFor="title">Title</label>
+              <label htmlFor="title">Nome da Tarefa</label>
               <Field name="title" type="text" />
               <ErrorMessage name="title" component="div" className="error-message" />
 
-              <label htmlFor="description">Description</label>
+              <label htmlFor="description">Descrição</label>
               <Field name="description" type="text" />
               <ErrorMessage name="description" component="div" className="error-message" />
 
@@ -46,7 +50,7 @@ const CreateTask: React.FC = () => {
                 <option value="em progresso">Em Progresso</option>
                 <option value="concluída">Concluída</option>
               </Field>
-              <button type="submit">Create</button>
+              <button type="submit">Criar</button>
             </Form>
           )}
         </Formik>

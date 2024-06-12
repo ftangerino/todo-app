@@ -4,6 +4,12 @@ import { Formik, Field, Form } from 'formik';
 import * as Yup from 'yup';
 import { useTasks } from '../context/TaskContext';
 
+/**
+ * Componente para atualizar uma tarefa.
+ * Utiliza Formik para manipulação de formulários e Yup para validação.
+ * 
+ * @returns {React.FC} - Componente funcional do React.
+ */
 const UpdateTask: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();

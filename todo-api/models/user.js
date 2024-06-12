@@ -1,6 +1,10 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/database');
 
+/**
+ * Modelo da tabela User no banco de dados.
+ * Define as colunas e suas propriedades.
+ */
 const User = sequelize.define('User', {
   id: {
     type: DataTypes.INTEGER,

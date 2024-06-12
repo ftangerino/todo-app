@@ -9,12 +9,13 @@ const swaggerDocs = require('./swagger');
 const app = express();
 const PORT = process.env.PORT || 4000;
 
-app.use(cors()); // cors para usar aplicações em portas diferentes
+app.use(cors()); // Permite o uso de aplicações em portas diferentes
 app.use(express.json());
-app.use('/api', taskRoutes);
-app.use('/auth', authRoutes);
-swaggerDocs(app);
+app.use('/api', taskRoutes); // Rotas para tarefas
+app.use('/auth', authRoutes); // Rotas para autenticação
+swaggerDocs(app); // Documentação Swagger
 
+// Sincroniza o modelo com o banco de dados e inicia o servidor
 sequelize.sync()
   .then(() => {
     app.listen(PORT, () => {

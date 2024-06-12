@@ -5,6 +5,12 @@ import axios from 'axios';
 import * as Yup from 'yup';
 import './Auth.css';
 
+/**
+ * Componente de login.
+ * Utiliza Formik para manipulação de formulários e Yup para validação.
+ * 
+ * @returns {React.FC} - Componente funcional do React.
+ */
 const Login: React.FC = () => {
   const navigate = useNavigate();
   const [errorMessage, setErrorMessage] = useState('');
@@ -26,7 +32,7 @@ const Login: React.FC = () => {
               localStorage.setItem('token', response.data.token);
               navigate('/home'); // Redirecionar para Home após login bem-sucedido
             } catch (error) {
-              setErrorMessage('Invalid credentials, please try again.');
+              setErrorMessage('Credenciais inválidas, tente novamente.');
               setTimeout(() => {
                 setErrorMessage('');
               }, 3000); // Remover a mensagem após 3 segundos
@@ -35,14 +41,14 @@ const Login: React.FC = () => {
           }}
         >
           <Form>
-            <label htmlFor="username">Username</label>
+            <label htmlFor="username">Nome de Usuário</label>
             <Field name="username" type="text" />
-            <label htmlFor="password">Password</label>
+            <label htmlFor="password">Senha</label>
             <Field name="password" type="password" />
             <button type="submit">Login</button>
           </Form>
         </Formik>
-        <p>Don't have an account? <Link to="/register">Register</Link></p>
+        <p>Não possui uma conta? <Link to="/register">Registro</Link></p>
       </div>
     </div>
   );

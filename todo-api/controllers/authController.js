@@ -2,6 +2,11 @@ const User = require('../models/user');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
+/**
+ * Registra um novo usuário.
+ * @param {Object} req - Objeto de requisição do Express.
+ * @param {Object} res - Objeto de resposta do Express.
+ */
 exports.register = async (req, res) => {
   try {
     const { username, password } = req.body;
@@ -13,6 +18,11 @@ exports.register = async (req, res) => {
   }
 };
 
+/**
+ * Faz o login de um usuário.
+ * @param {Object} req - Objeto de requisição do Express.
+ * @param {Object} res - Objeto de resposta do Express.
+ */
 exports.login = async (req, res) => {
   try {
     const { username, password } = req.body;
